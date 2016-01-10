@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+configurations {
+    provided
+}
+
+sourceSets {
+    main.compileClasspath += configurations.provided
+}
+
+idea {
+    module{
+        scopes.PROVIDED.plus += [configurations.provided]
+    }
+}
+
+dependencies {
+    provided 'com.google.android:android:2.3.1'
+}
