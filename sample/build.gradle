@@ -23,6 +23,6 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 
-    compile project(':api')
-    apt project(':compiler')
+    compile 'me.yokeyword.smartsharedpreferences:api:1.0.0'
+    apt 'me.yokeyword.smartsharedpreferences:compiler:1.0.0'
 }
