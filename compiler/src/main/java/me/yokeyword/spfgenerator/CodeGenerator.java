@@ -31,8 +31,8 @@ import me.yokeyword.api.spf.field.StringSpfField;
  * Created by YoKeyword on 16/1/7.
  */
 public class CodeGenerator {
-    private static final String CLASS_SUFFIX = "_Spf";
-    private static final String CLASS_EDITOR_SUFFIX = "_Editor";
+    private static final String CLASS_PREFIX = "Spf_";
+    private static final String CLASS_EDITOR_PREFIX = "Editor_";
 
     private static final String METHOD_CREATE = "create";
     private static final String METHOD_EDIT = "edit";
@@ -45,11 +45,11 @@ public class CodeGenerator {
 
     public CodeGenerator(String packageName, String className, ArrayList<HashMap<Class, String>> methodsMap) {
         this.className = className;
-        this.generatedClassName = className + CLASS_SUFFIX;
+        this.generatedClassName = CLASS_PREFIX + className;
         this.methodsList = methodsMap;
 
         contextClass = ClassName.get("android.content", "Context");
-        editorClass = ClassName.get(packageName + "." + generatedClassName, className + CLASS_EDITOR_SUFFIX);
+        editorClass = ClassName.get(packageName + "." + generatedClassName, CLASS_EDITOR_PREFIX + className);
         spfClass = ClassName.get(packageName, generatedClassName);
     }
 
@@ -141,7 +141,7 @@ public class CodeGenerator {
      * Editor类
      */
     private TypeSpec classEditor() {
-        return TypeSpec.classBuilder(className + CLASS_EDITOR_SUFFIX)
+        return TypeSpec.classBuilder(CLASS_EDITOR_PREFIX + className)
                 .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
                 .superclass(ClassName.get(EditorHelper.class))
                 .addMethod(editorConstrucotr())
