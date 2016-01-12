@@ -3,7 +3,7 @@ SmartSharedPreferences可以让你创建实体类一样创建一个SharedPrefere
 
 如果你使用RxJava，这里是RxJava版本的[RxSmartSharedPreferences](https://github.com/YoKeyword/RxSmartSharedPreferences)
 # 特性
-1、大概是使用最简单SharedPreferences的操作库了，只需一个@Spf注解，基于编译时注解
+1、可能是使用最简单SharedPreferences的操作库，只需一个@Spf注解，基于编译时注解
 
 2、链式操作
 
