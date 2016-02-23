@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import me.yokeyword.sample.spf.User_Spf;
+import me.yokeyword.sample.spf.Spf_User;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText mEtName, mEtMobile;
     private Button mBtnSave, mBtnRemoveName, mBtnRemoveAll, mBtnExistsName, mBtnGet;
 
-    private User_Spf mUserSpf;
+    private Spf_User mUserSpf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mUserSpf = User_Spf.create(this);
+        mUserSpf = Spf_User.create(this);
         initView();
         initListener();
     }
