@@ -69,10 +69,6 @@ public class User {
 // 也可以使用commit()提交，返回boolean类型
 ```
 
-#### 注：
-
-**如果你像存取基本类型之外的对象实体，可以转换成Json(String类型)存入，取出时再将Json转换成对应对象。**
-
 get()方法的默认值：
 
 | 返回类型     | 默认值|
@@ -82,6 +78,12 @@ get()方法的默认值：
 | float        | 0f    |
 | boolean      | false |
 | String       | ""    |
+
+
+
+## 注：
+
+**如果你像存取基本类型之外的对象实体，可以转换成Json(String类型)存入，取出时再将Json转换成对应对象。**
 
 # 致谢
 [AndroidAnnotations](https://github.com/excilys/androidannotations)
